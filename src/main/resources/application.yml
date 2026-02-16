@@ -18,14 +18,14 @@ spring:
             allowCredentials: true
       routes:
         - id: resume_route
-          uri: ${CLT_SERVER_HOST}
-#          uri: http://localhost:8081
+#          uri: ${CLT_SERVER_HOST}
+          uri: http://localhost:8081
           predicates:
             - Path=/resume/**
 
         - id: auth_server
-          uri: ${CLT_SERVER_HOST}
-#          uri: http://localhost:9001
+#          uri: ${CLT_SERVER_HOST}
+          uri: http://localhost:9001
           predicates:
             - Path=/auth/**
 management:
