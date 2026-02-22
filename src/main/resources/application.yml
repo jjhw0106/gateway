@@ -28,6 +28,11 @@ spring:
           uri: http://localhost:9001
           predicates:
             - Path=/auth/**
+
+        - id: lotto_server
+          uri: http://localhost:8082
+          predicates:
+            - Path=/lotto/**
 management:
   endpoints:
     web:
