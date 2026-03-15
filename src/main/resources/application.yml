@@ -7,7 +7,9 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost:3000"
+            allowedOrigins:
+              - "http://localhost:3000"
+              - "http://localhost:3001"
             allowedMethods:
               - GET
               - POST
@@ -33,6 +35,16 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/lotto/**
+
+        - id: scraper_server
+          uri: http://localhost:4000
+          predicates:
+            - Path=/scraper/**
+
+        - id: myapp_server
+          uri: http://localhost:4001
+          predicates:
+            - Path=/my-app-items/**
 management:
   endpoints:
     web:
